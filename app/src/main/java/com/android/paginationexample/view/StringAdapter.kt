@@ -17,12 +17,12 @@ class StringAdapter(private val viewModel: StringViewModel) : RecyclerView.Adapt
     }
 
     override fun onBindViewHolder(holder: StringViewHolder, position: Int) {
-        val model = viewModel.getStrings()[position]
+        val model = viewModel.getStringsForCurrentPage()[position]
         holder.bind(model)
     }
 
     override fun getItemCount(): Int {
-        return viewModel.getStrings().size
+        return viewModel.getStringsForCurrentPage().size
     }
 }
 

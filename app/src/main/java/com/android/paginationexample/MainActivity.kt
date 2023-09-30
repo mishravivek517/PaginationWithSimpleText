@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.android.paginationexample.utility.PaginationScrollListener
 import com.android.paginationexample.view.StringAdapter
 import com.android.paginationexample.viewmodel.StringViewModel
 
@@ -22,5 +23,20 @@ class MainActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = adapter
-    }
+        recyclerView.addOnScrollListener(object : PaginationScrollListener(layoutManager){
+            override fun loadMoreItems() {
+                TODO("Not yet implemented")
+            }
+
+            override fun isLastPage(): Boolean {
+                TODO("Not yet implemented")
+            }
+
+            override fun isLoading(): Boolean {
+                TODO("Not yet implemented")
+            }
+
+        })
+
+}
 }
